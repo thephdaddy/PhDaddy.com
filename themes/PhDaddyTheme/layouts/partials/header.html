@@ -1,0 +1,19 @@
+{{ "<!-- Header -->" | safeHTML }}
+<header id="header">
+	{{/*changed: deleted avatar */}}
+	{{/*changed: added title */}}
+	<a class = "undotted" href="{{$.Site.BaseURL}}"><h2 class="SiteTitle">{{ "PhDaddy.com" | markdownify }}</h2></a><br>
+	{{ with .Site.Params.sidebar.bio }}
+		<h1 class="SiteDescription">{{ . | markdownify }}</h1>
+	{{ end }}
+
+	{{ with .Site.Menus.main }}
+		<nav id="sidebar">
+			<ul>
+			{{ range . }}
+				<li><a href="{{ .URL | absURL }}">{{ .Name }}</a></li>
+			{{ end }}
+			</ul>
+		</nav>
+	{{ end }}
+</header>

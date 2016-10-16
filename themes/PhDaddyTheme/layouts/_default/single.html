@@ -1,0 +1,18 @@
+{{ define "main" }}
+	<span>
+		<h1>{{ .Title }}</h1>
+		
+		{{/*Changed: this adds a picture to each post if there is a featured image, which there should be anyway*/}}
+		{{ if isset .Params "featured_image" }}
+				<div class = "PostHeaderImage"	>		<img src="{{ $.Site.BaseURL }}images/FeaturedImages/{{ .Param "featured_image" }}_full.jpg" alt="" /> </div>
+		{{ end }}
+		
+		{{ partial "post-meta" . }}
+	</span>
+
+	<p>
+	    {{ .Content }}
+	</p>
+	{{/*CHANGED: added the disqus comments that dont mess up when offline*/}}
+	{{ partial "disqus.html" . }}
+{{ end }}

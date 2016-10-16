@@ -1,0 +1,15 @@
+{{ define "main" }}
+	{{ if not .Site.Params.about.hide }}
+		{{ partial "about" . }}
+	{{ end }}
+
+	{{/*Changed: Deleted portfolio section*/}}
+
+	{{ if not .Site.Params.recentposts.hide }}
+		{{ partial "recent-posts" . }}
+	{{ end }}
+
+	{{ if not .Site.Params.contact.hide }}
+		{{ partial "contact" . }}
+	{{ end }}
+{{ end }}

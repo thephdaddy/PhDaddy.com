@@ -1,0 +1,19 @@
+{{ define "main" }}
+{{/*CHANGED;added blog list descrioption*/}}
+{{ if not .Site.Params.aboutBlog.hide }}
+		{{ partial "aboutBlog" . }}
+{{end}}
+    {{ $paginator := .Paginate .Data.Pages }}
+	
+	<!-- CHANGED; added this to display the blog posts in column format with images-->
+	<div class="row">
+    {{ range $paginator.Pages }}
+	<article class="6u 12u$(xsmall) work-item">
+
+        {{ .Render "summary" }}
+		</article>
+    {{ end }}
+	</div>
+
+    {{ partial "pagination" . }}
+{{ end }}
