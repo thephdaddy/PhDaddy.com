@@ -1,0 +1,9 @@
+<!-- this entire file is customed. check default theme for original.-->
+{{ if isset .Params "featured_image" }}
+			<a href="{{ .Permalink }}" class="image fit thumb"><img src="{{ $.Site.BaseURL }}images/FeaturedImages/{{ .Param "featured_image" }}.jpg" alt="" /></a>
+		
+		<h3>
+		<a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+		</h3>
+			<p> {{ .Description  | markdownify }}</p>
+	{{ end }}

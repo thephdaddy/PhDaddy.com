@@ -1,0 +1,16 @@
+<section>
+    {{ with .Site.Params.recentposts.title }}
+        <h2>{{ . }}</h2>
+    {{ end }}
+
+	<div class="row">
+		
+        {{ range first 6 (where .Data.Pages "Section" "post") }}
+		<article class="6u 12u$(xsmall) work-item">
+            <a href="{{ .Permalink }}" class="image fit thumb"><img src="{{ $.Site.BaseURL }}images/FeaturedImages/{{ .Param "featured_image" }}.jpg" alt="" /></a>
+			<h3>{{ .Title | markdownify }}</h3>
+			<p> {{ .Description  | markdownify }}</p>
+		</article>
+        {{ end }}
+	</div>
+</section>
