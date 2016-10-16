@@ -1,12 +1,16 @@
-baseurl = "http://replace-this-with-your-hugo-site.com/"
+baseurl = "http://www.phdaddy.com/"
 languageCode = "en-us"
 title = "PhDaddy"
-theme = "hugo-strata-theme"
+theme = "PhDaddyTheme"
 disqusShortname = "phdaddy"
 # Enable Google Analytics by inserting your tracking code
 googleAnalytics = ""
 # Define how many posts should appear on a site
 paginate = 10
+
+contentdir= "content"
+layoutdir= "layouts"
+publishdir= "public"
 
 [params]
 	# To provide some metadata for search engines feel free to add a few
